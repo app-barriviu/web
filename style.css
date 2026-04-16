@@ -44,17 +44,6 @@ nav {
 }
 
 .nav-logo {
- /* display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0;
-  font-family: 'neue-haas-grotesk-display', sans-serif;
-  font-weight: 800; 
-  font-size: 1.6rem;
-  color: var(--azul);
-  letter-spacing: -0.5px;
-  gap: 0.8rem; */
-
   display: flex;         /* Alinea icono y texto en fila */
   align-items: center;   /* Centra verticalmente */
   font-family: 'heue-haas-grotesk-display', sans-serif;
@@ -99,7 +88,7 @@ nav {
 .hero-visual {
   position: absolute;
   right: 15%;
-  top: 55%;
+  top: 5%;
   transform: translateY(-50%);
   z-index: 5;
   width: 750px;
@@ -561,6 +550,11 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 .section-title-how .dim2 {
   color: var(--azul-mig);
   font-weight: 550;
+}
+
+.section-title-how .dim3 {
+  color: var(--blanco); 
+  font-weight: 650;
 }
 
 .section-sub {
