@@ -1,12 +1,13 @@
 :root {
   /* Paleta de colores */
-  --azul: #0037ff; /* Azul de los botones */
-  --azul-oscuro: #060d2e; /* Azul profundo, para hovers y degradados */
-  --naranja: #6c727f; /* Azul profundo, para hovers y degradados */
+  --azul: #0037ff; 
+  --azul-oscuro: #060d2e; 
+  --naranja: #6c727f; 
   --amarillo: #183fc5;
   --blanco: #ffffff;
   --negro: #111111;
   --gris: #6c727f;
+  --gris-fuerte: #242424;
   --gris-claro: #f4f4f4;
   --azul-mig: #4D7CFF;
   --azul-bg: #060d2e;
@@ -20,7 +21,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'neue-haas-grotesk-display', sans-serif;
-  background: var(--negro);
+  background: var(--blanco);
   color: white;
   overflow-x: hidden;
 }
@@ -44,13 +45,13 @@ nav {
 }
 
 .nav-logo {
-  display: flex;         /* Alinea icono y texto en fila */
-  align-items: center;   /* Centra verticalmente */
+  display: flex;        
+  align-items: center;   
   font-family: 'heue-haas-grotesk-display', sans-serif;
   font-weight: 800;
   font-size: 1.6rem;
   letter-spacing: -0.5px;
-  text-decoration: none; /* Por si acaso es un enlace */
+  text-decoration: none; 
 }
 .nav-logo span {
    color: var(--azul); 
@@ -88,7 +89,7 @@ nav {
 .hero-visual {
   position: absolute;
   right: 15%;
-  top: 5%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 5;
   width: 750px;
@@ -96,21 +97,20 @@ nav {
 }
 
 .video-container-horizontal {
-  background: #000;
+  background: var(--negro);
   border-radius: 20px;
   padding: 8px;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 
-              0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0px 120px var(--azul);
   position: relative;
   overflow: hidden;
 }
 
 .video-frame {
   width: 100%;
-  aspect-ratio: 16 / 9; /* Esto garantiza que siempre sea horizontal */
+  aspect-ratio: 16 / 9; 
   border-radius: 14px;
   overflow: hidden;
-  background: #060d2e;
+  background: var(--azul-bg);
   position: relative;
 }
 
@@ -123,14 +123,13 @@ nav {
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
 /* El chasis del teléfono */
 .iphone-mockup {
   width: 280px; 
-  height: 600px; /* Ajustado para que la proporción sea igual a 773x1690 */
+  height: 600px; 
   background: var(--negro);
   border-radius: 45px;
   padding: 12px;
@@ -172,7 +171,7 @@ nav {
 .iphone-screen img {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* "Fill" obligará a la imagen a ocupar el 100% del contenedor ajustado */
+  object-fit: fill; 
   display: block;
 }
 
@@ -189,9 +188,8 @@ nav {
   left: 0; 
   width: 100%; 
   height: 100%;
-  /* Crea un degradado blanco muy suave de esquina a esquina */
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
-  pointer-events: none; /* Importante: permite que se pueda clicar "a través" de él si hubiera botones */
+  background: linear-gradient(135deg, 0%, transparent 50%);
+  pointer-events: none; 
   z-index: 5;
 }
 
@@ -205,13 +203,12 @@ nav {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 60% 40% , var(--azul-oscuro) 0%, transparent 90%), /* Degradado del fondo del home*/
-              radial-gradient(ellipse 70% 40% at 80% 80% , var(--azul-card) 0%, transparent 60%);
+  background: radial-gradient(ellipse 90% 40% at 20% 60% , var(--azul) 0%, transparent 100%);
 }
 .hero-grid { /* lineas del fondo de la sección. principal */
   position: absolute; inset: 0; opacity: 0.04;
-  background-image: linear-gradient(rgba(0,55,255,1) 1px, transparent 1px),  /* Degradado de las lineas del fondo */
-                    linear-gradient(90deg, rgba(0,55,255,1) 1px, transparent 1px);
+  background-image: linear-gradient(var(--azul) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--azul) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-content {
@@ -252,7 +249,7 @@ h1 {
   animation: fadeUp 0.6s 0.1s ease both;
 }
 h1 .accent { color: var(--azul); }
-h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
+h1 .line2 { display: block; color: var(--gris-claro); }
 .hero-desc {
   font-size: 1.15rem;
   color: var(--blanco);
@@ -285,7 +282,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 }
 .btn-primary:hover { 
   transform: translateY(-2px); 
-  box-shadow: 0 0 50px var(--azul-mig); 
+  box-shadow: 0 0 50px var(--blanco); 
 }
 .btn-secondary {
   width: 150px;
@@ -362,33 +359,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
     transform: translateY(-50%) translateY(-20px) rotate(-1deg); 
   }
 }
-.phone {
-  width: 280px;
-  background: #1a2820;
-  border-radius: 40px;
-  padding: 14px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(46,204,113,0.2), inset 0 0 0 1px rgba(255,255,255,0.05);
-  position: relative;
-}
-.phone-inner {
-  background: #0f1a14;
-  border-radius: 28px;
-  overflow: hidden;
-  height: 550px;
-  position: relative;
-}
-.phone-notch {
-  position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-  width: 80px; height: 20px;
-  background: #0a1209;
-  border-radius: 10px;
-  z-index: 10;
-}
-.phone-screen {
-  padding: 50px 16px 16px;
-  height: 100%;
-  display: flex; flex-direction: column; gap: 12px;
-}
+
 .p-header {
   font-family: 'Syne', sans-serif;
   font-size: 1.1rem; font-weight: 700;
@@ -434,14 +405,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   border-radius: 6px;
   font-weight: 600;
 }
-.p-map {
-  flex: 1;
-  background: #1a2c22;
-  border-radius: 14px;
-  overflow: hidden;
-  position: relative;
-  min-height: 100px;
-}
+
 .map-dot {
   position: absolute;
   width: 10px; height: 10px;
@@ -501,10 +465,6 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 }
 
 /* ─── FEATURES ─── */
-/*#features {
-  padding: 7rem 6%;
-  background: var(--azul-oscuro);
-} */
 
 #features {
   min-height: 60vh;
@@ -515,15 +475,18 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .features-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 40% 20% , var(--azul-oscuro) 0%, transparent 90%), /* Degradado del fondo del home*/
-              radial-gradient(ellipse 50% 40% at 20% 20% , var(--azul-card) 0%, transparent 80%);
+  background: radial-gradient(ellipse 90% 40% at 80% 60% , var(--azul) 0%, transparent 100%);
 }
 
 .features-line {
   position: absolute; inset: 0; opacity: 0.04;
-  background-image: linear-gradient(rgba(0,55,255,1) 1px, transparent 1px),  /* Degradado de las lineas del fondo */
-                    linear-gradient(90deg, rgba(0,55,255,1) 1px, transparent 1px);
+  background-image: linear-gradient(var(--azul) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--azul) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+
+.section-title {
+  color: var(--azul-card);
 }
 
 .section-label {
@@ -543,22 +506,22 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   margin-bottom: 1rem;
 }
 .section-title-how .dim { 
-  color: var(--blanco); 
+  color: var(--azul); 
   font-weight: 650;
 }
 
 .section-title-how .dim2 {
-  color: var(--azul-mig);
+  color: var(--azul);
   font-weight: 550;
 }
 
 .section-title-how .dim3 {
-  color: var(--blanco); 
+  color: var(--azul); 
   font-weight: 650;
 }
 
 .section-sub {
-  color: var(--gris);
+  color: var(--azul-oscuro);
   font-size: 1rem;
   max-width: 480px;
   line-height: 1.6;
@@ -570,7 +533,6 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5px;
   background: var(--azul-card);
-  border: 1px solid var(--azul-card);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -585,13 +547,13 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 2px;
+  width: 100%; 
+  height: 2.5px;
   background: linear-gradient(90deg, transparent, var(--azul), transparent);
   transform: scaleX(0);
   transition: transform 1s;
 }
-.feature-card:hover::before { transform: scaleX(2); }
-.feature-card:hover { background: var(--azul-oscuro); }
+.feature-card:hover::before { transform: scaleX(3); }
 .feature-icon {
   font-size: 2rem;
   margin-bottom: 1.2rem;
@@ -661,6 +623,14 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   color: var(--gris);
 }
 
+.section-sub-categories {
+color: var(--blanco);
+  font-size: 1rem;
+  max-width: 480px;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
 /* ─── HOW ─── */
 #how {
   min-height: 80vh;
@@ -671,8 +641,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .how-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 40% 20% , var(--azul-oscuro) 0%, transparent 90%), /* Degradado del fondo del home*/
-              radial-gradient(ellipse 50% 30% at 75% 80% , var(--azul-card) 0%, transparent 60%);
+  background: radial-gradient(ellipse 90% 60% at 20% 50% , var(--azul) 0%, transparent 100%);
 }
 
 .how-line {
@@ -705,7 +674,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   font-family: 'neue-haas-grotesk-display', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--azul);
+  color: var(--azul-oscuro);
   width: 42px; height: 42px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
@@ -717,7 +686,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 }
 .step-text p {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--blanco);
   line-height: 1.5;
   font-weight: 300;
 }
@@ -730,7 +699,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 #how .iphone-mockup {
   position: relative;
-  top: 0;
+  top: -100px;
   margin: 0 auto;
   transform: none;
   width: 280px; 
@@ -755,10 +724,10 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .how-phone {
   width: 240px;
-  background: #1a2820;
+  background: var(--azul-bg);
   border-radius: 36px;
   padding: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(46,204,113,0.15);
+  box-shadow: 0 40px 80px var(--azul), 0 0 0 1px;
   animation: float2 5s ease-in-out infinite;
 }
 @keyframes float2 {
@@ -781,10 +750,10 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 }
 .rec-header span { color: var(--azul); }
 .rec-card {
-  background: rgba(255,255,255,0.05);
+  background: var(--gris-fuerte);
   border-radius: 14px;
   padding: 12px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--gris-fuerte);
 }
 
 .rec-img {
@@ -817,7 +786,11 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   background: rgba(46,204,113,0.2);
   color: var(--azul);
 }
-.rec-cards-row { display: flex; gap: 8px; }
+.rec-cards-row { 
+  display: flex; 
+  gap: 8px;
+}
+
 .rec-cards-row .rec-card { 
   flex: 1; 
 }
@@ -838,6 +811,21 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   gap: 1.5rem;
   margin-top: 3.5rem;
 }
+
+.section-title-audience {
+  color: var(--blanco);
+}
+
+.section-sub-audience {
+  color: var(--blanco);
+  font-size: 1rem;
+  max-width: 480px;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+
 
 .aud-card {
   background: var(--azul-panel);
@@ -880,7 +868,7 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .cta-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 70% at 50% 50%, var(--azul-bg) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 70% at 50% 60% , var(--azul) 0%, transparent 70%);
 }
 
 .cta-content { 
@@ -898,7 +886,8 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 #cta .section-sub { 
   max-width: 100%; 
   text-align: center; 
-  margin: 0 auto 3rem; 
+  margin: 0 auto 3rem;
+  color: var(--blanco);
 }
 
 .cta-buttons { 
@@ -911,7 +900,6 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 .store-btn {
   display: flex; align-items: center; gap: 0.8rem;
   background: var(--azul);
-  border: 0.1px solid var(--azul-card);
   color: var(--blanco);
   padding: 0.9rem 1.8rem;
   border-radius: 14px;
@@ -921,7 +909,6 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .store-btn:hover { 
   background: var(--azul-bg); 
-  border-color: var(--azul-mig); 
 }
 
 .store-btn .store-icon { 
@@ -954,8 +941,6 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 
 .grafics-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 60% 40% , var(--azul-oscuro) 0%, transparent 90%), /* Degradado del fondo del home*/
-              radial-gradient(ellipse 70% 40% at 80% 80% , var(--azul-card) 0%, transparent 60%);
 
   border-bottom: 1px solid var(--blanco);
 }
@@ -965,6 +950,16 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
   background-image: linear-gradient(var(--azul) 1px, transparent 1px),  /* Degradado de las lineas del fondo */
                     linear-gradient(90deg, var(--azul) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+
+.section-title-grafics {
+  font-family: 'neue-haas-grotesk', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--azul-card);
 }
 
 .container-charts {
@@ -1001,12 +996,11 @@ h1 .line2 { display: block; color: rgba(255,255,255,0.55); }
 }
 
 #setmana-chart th {
-  color: var(--gris);
+  color: var(--azul-bg);
   font-size: 0.75rem;
   padding-top: 10px;
 }
 
-/* Personalització Gràfica de Formatge */
 .pie-box {
   display: flex;
   flex-direction: column;
@@ -1063,7 +1057,7 @@ footer {
 .footer-logo {
   font-family: 'heue-haas-grotesk-display', sans-serif;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color: var(--azul);
 }
 
@@ -1072,7 +1066,7 @@ footer {
 }
 
 .footer-copy { 
-  font-size: 0.8rem; 
+  font-size: 1rem; 
   color: var(--gris); 
 }
 .footer-links { 
@@ -1081,7 +1075,7 @@ footer {
 }
 
 .footer-links a { 
-  font-size: 0.8rem; 
+  font-size: 1rem; 
   color: var(--gris); 
   text-decoration: none; 
   transition: color 0.2s; 
