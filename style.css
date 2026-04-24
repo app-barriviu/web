@@ -2,8 +2,6 @@
   /* Paleta de colores */
   --azul: #0037ff; 
   --azul-oscuro: #060d2e; 
-  --naranja: #6c727f; 
-  --amarillo: #183fc5;
   --blanco: #ffffff;
   --negro: #111111;
   --gris: #6c727f;
@@ -15,9 +13,15 @@
   --azul-card: #0e1e52;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   font-family: 'neue-haas-grotesk-display', sans-serif;
@@ -55,8 +59,14 @@ nav {
 }
 .nav-logo span {
    color: var(--azul); 
-  }
-.nav-links { display: flex; gap: 2.5rem; list-style: none;}
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 2.5rem; 
+  list-style: none;
+}
+
 .nav-links a {
   color: var(--blanco);
   text-decoration: none;
@@ -65,9 +75,11 @@ nav {
   letter-spacing: 0.3px;
   transition: color 0.2s;
 }
+
 .nav-links a:hover { 
-  color: var(--blanco);
+  color: var(--azul-mig);
 }
+
 .nav-cta {
   background: var(--azul);
   color: var(--verde-claro) !important;
@@ -78,6 +90,7 @@ nav {
   transition: transform 0.2s, background 0.2s !important;
   box-shadow: 0px 0px 5px var(--azul-mig);
 }
+
 .nav-cta:hover { 
   background: var(--blanco) !important; 
   transform: transform(2s); 
@@ -85,7 +98,6 @@ nav {
   box-shadow: 0px 0px 10px var(--azul-mig);
  }
 
- /* Contenedor principal del mockup */
 .hero-visual {
   position: absolute;
   right: 15%;
@@ -145,7 +157,6 @@ nav {
   50% { transform: translateY(-15px); }
 }
 
-/* Cápsula superior */
 .iphone-speaker {
   position: absolute;
   top: 20px;
@@ -153,18 +164,17 @@ nav {
   transform: translateX(-50%);
   width: 85px;
   height: 28px;
-  background: #000;
+  background: var(--negro);
   border-radius: 20px;
   z-index: 10;
 }
 
-/* El contenedor de la pantalla */
 .iphone-screen {
   width: 100%;
   height: 100%;
   border-radius: 38px;
   overflow: hidden;
-  background: #fff;
+  background: var(--blanco);
   position: relative;
 }
 
@@ -175,7 +185,6 @@ nav {
   display: block;
 }
 
-/* Animación de flotación suave */
 
 @keyframes floatMockup {
   0%, 100% { transform: translateY(-50%) rotate(0deg); }
@@ -193,7 +202,6 @@ nav {
   z-index: 5;
 }
 
-/* ─── Sección principal ─── */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
@@ -205,7 +213,7 @@ nav {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse 90% 40% at 20% 60% , var(--azul) 0%, transparent 100%);
 }
-.hero-grid { /* lineas del fondo de la sección. principal */
+.hero-grid {
   position: absolute; inset: 0; opacity: 0.04;
   background-image: linear-gradient(var(--azul) 1px, transparent 1px),
                     linear-gradient(90deg, var(--azul) 1px, transparent 1px);
@@ -239,8 +247,9 @@ nav {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.4); }
 }
+
 h1 {
-  font-family: 'neue-haas-grotesk-display', sans-serif; /* Tipografia Titulo */
+  font-family: 'neue-haas-grotesk-display', sans-serif; 
   font-size: clamp(3.2rem, 7vw, 5.5rem);
   font-weight: 800;
   line-height: 1.0;
@@ -248,8 +257,15 @@ h1 {
   margin-bottom: 1.5rem;
   animation: fadeUp 0.6s 0.1s ease both;
 }
-h1 .accent { color: var(--azul); }
-h1 .line2 { display: block; color: var(--gris-claro); }
+h1 .accent { 
+  color: var(--azul);
+}
+
+h1 .line2 { 
+  display: block; 
+  color: var(--gris-claro); 
+}
+
 .hero-desc {
   font-size: 1.15rem;
   color: var(--blanco);
@@ -349,121 +365,6 @@ h1 .line2 { display: block; color: var(--gris-claro); }
   color: var(--blanco);
 }
 
-/* Phone mockup */
-
-@keyframes floatAnimation {
-  0%, 100% { 
-    transform: translateY(-50%) translateY(0) rotate(0deg); 
-  }
-  50% { 
-    transform: translateY(-50%) translateY(-20px) rotate(-1deg); 
-  }
-}
-
-.p-header {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.1rem; font-weight: 700;
-  color: white;
-}
-.p-header span { color: var(--azul); }
-.p-search {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 10px 14px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  display: flex; align-items: center; gap: 8px;
-}
-.p-chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.p-chip {
-  font-size: 0.65rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.chip-active { background: var(--azul); color: var(--negro); }
-.chip-inactive { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
-.p-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.06);
-  display: flex; gap: 10px; align-items: flex-start;
-}
-.p-card-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-.p-card-text h4 { font-size: 0.75rem; font-weight: 600; color: white; margin-bottom: 2px; }
-.p-card-text p { font-size: 0.65rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-.p-card-tag {
-  font-size: 0.6rem; padding: 2px 7px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.map-dot {
-  position: absolute;
-  width: 10px; height: 10px;
-  background: var(--azul);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(46,204,113,0.2);
-  animation: mapPulse 2s infinite;
-}
-@keyframes mapPulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(46,204,113,0.2); }
-  50% { box-shadow: 0 0 0 10px rgba(46,204,113,0.05); }
-}
-.map-line {
-  position: absolute;
-  background: rgba(46,204,113,0.15);
-  border-radius: 2px;
-}
-.map-label {
-  position: absolute; bottom: 8px; left: 10px;
-  font-size: 0.6rem; color: rgba(255,255,255,0.5);
-  font-weight: 500;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── Estadisticas de la APP ─── */
-#stats {
-  padding: 4rem 6%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--azul-panel);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.stat-item {
-  background: var(--azul-bg);
-  padding: 2rem;
-  text-align: center;
-  border-radius: 20px;
-}
-.stat-number {
-  font-family: 'neue-haas-grotesk-display', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--blanco);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.stat-label {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
-  font-weight: 400;
-}
-
 /* ─── FEATURES ─── */
 
 #features {
@@ -553,7 +454,10 @@ h1 .line2 { display: block; color: var(--gris-claro); }
   transform: scaleX(0);
   transition: transform 1s;
 }
-.feature-card:hover::before { transform: scaleX(3); }
+.feature-card:hover::before { 
+  transform: scaleX(3); 
+}
+
 .feature-icon {
   font-size: 2rem;
   margin-bottom: 1.2rem;
@@ -897,22 +801,45 @@ color: var(--blanco);
   flex-wrap: wrap; 
 }
 
-.store-btn {
-  display: flex; align-items: center; gap: 0.8rem;
-  background: var(--azul);
-  color: var(--blanco);
-  padding: 0.9rem 1.8rem;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: background 0.25s, border-color 0.25s;
+.cta-buttons-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center; /* Centrat vertical */
+    margin-top: 3rem;
 }
+
+.store-btn {
+  display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 
 .store-btn:hover { 
-  background: var(--azul-bg); 
+  transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
-.store-btn .store-icon { 
-  font-size: 1.6rem; 
+.google-play-badge {
+    height: 52px; 
+    width: auto; 
+    display: block;
+    opacity: 50%;
+}
+
+.app-store-badge {
+    height: 52px; 
+    width: auto; 
+    display: block;
+    opacity: 50%;
+}
+
+.progresive-badge {
+    height: 52px; 
+    width: auto; 
+    display: block;
 }
 
 .store-btn .store-text { 
